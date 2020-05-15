@@ -26,6 +26,16 @@ def assignment():
     # show the form, it wasn't submitted
     return render_template('assignments.html')
 
+@app.route("/classes", methods=['GET', 'POST'])
+def classpage():
+    if request.method == 'POST':
+        # do stuff when the form is submitted
+        # redirect to end the POST handling
+        # the redirect can be to the same route or somewhere else
+        return redirect(url_for('index'))
+    # show the form, it wasn't submitted
+    return render_template('classes.html')
+
 #start the server
 if __name__ == "__main__":
     app.run()
